@@ -43,16 +43,6 @@ app.get("/api/notes", function (req, res) {
     console.log(database);
     // res.json(database);
   });
-  // fs.readFile("./db.json", 'utf8' (err, data) => {
-  //   if (err) {
-  //     console.log("error, you cannot read my file");
-  //   } else {
-  //     const database = JSON.parse(data);
-  //     database.forEach(db => {
-  //       console.log(`${db.name}: ${db.type}`)
-  //     })
-  //   }
-  // });
   //use the fs module to read the db.json file
   //THEN parse the file contents with JSON.parse to get the real data
   //send the parsed data back to the client with res.JSON()
