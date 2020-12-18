@@ -2,12 +2,11 @@
 //==============================================
 
 const express = require("express");
-const fs = require("fs");
-const path = require("path");
+// const fs = require("fs");
+// const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 uuidv4();
-
-console.log("uuid: " + uuidv4());
+// console.log("uuid: " + uuidv4());
 
 // Sets up the Express App
 // ==============================================
@@ -35,18 +34,21 @@ let testing = [
 //Routes
 //==============================================
 
-app.get("/api/notes", function (req, res) {
-  fs.readFile("./db/db.json", "utf8", (err, data) => {
-    if (err) throw err;
-    // console.log(data);
-    let database = JSON.parse(data);
-    console.log(database);
-    // res.json(database);
-  });
-  //use the fs module to read the db.json file
-  //THEN parse the file contents with JSON.parse to get the real data
-  //send the parsed data back to the client with res.JSON()
-});
+require("./routes/apiRoutes")(app);
+// require("./routes/htmlRoutes")(app);
+
+// app.get("/api/notes", function (req, res) {
+//   fs.readFile("./db/db.json", "utf8", (err, data) => {
+//     if (err) throw err;
+//     // console.log(data);
+//     let database = JSON.parse(data);
+//     console.log(database);
+//     // res.json(database);
+//   });
+//   //use the fs module to read the db.json file
+//   //THEN parse the file contents with JSON.parse to get the real data
+//   //send the parsed data back to the client with res.JSON()
+// });
 
 // app.post("/api/notes", function (req, res) {
 //   //Access the POSTed data in req.body
@@ -57,16 +59,16 @@ app.get("/api/notes", function (req, res) {
 //   //Then save the contents back to the db.json file with the fs module
 // });
 
-app.get("/notes", function (req, res) {
-  // res.json(testing);
-  res.sendFile(path.join(__dirname, "./public/notes.html"));
-});
+// app.get("/notes", function (req, res) {
+//   // res.json(testing);
+//   res.sendFile(path.join(__dirname, "./public/notes.html"));
+// });
 
-app.get("*", function (req, res) {
-  // res.send("Hello humans you are tiny!");
-  //return the content of the index.html
-  res.sendFile(path.join(__dirname, "./public/index.html"));
-});
+// app.get("*", function (req, res) {
+//   // res.send("Hello humans you are tiny!");
+//   //return the content of the index.html
+//   res.sendFile(path.join(__dirname, "./public/index.html"));
+// });
 
 // app.delete("/api/notes/:id", function (req, res) {
 //   //Acess id: from 'req.params.id'
