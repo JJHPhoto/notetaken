@@ -1,7 +1,9 @@
 //Dependencies
 //==============================================
 
-let express = require("express");
+const express = require("express");
+const path = require("path");
+
 //going to need to require fs module to import it.
 
 // Sets up the Express App
@@ -46,15 +48,15 @@ let testing = [
 // });
 
 app.get("/notes", function (req, res) {
-  res.json(testing);
-  // res.sendFile(/**path to the notes.html file */);
+  // res.json(testing);
+  res.sendFile(path.join(__dirname, "./public/notes.html"));
 });
 
-// app.get("*", function (req, res) {
-//   res.send("Hello humans you are tiny!");
-//   //return the content of the index.html
-//   res.sendFile(/**path to the index.html file */);
-// });
+app.get("*", function (req, res) {
+  // res.send("Hello humans you are tiny!");
+  //return the content of the index.html
+  res.sendFile(path.join(__dirname, "./public/index.html"));
+});
 
 // app.delete("/api/notes/:id", function (req, res) {
 //   //Acess id: from 'req.params.id'
