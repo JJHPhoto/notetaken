@@ -2,9 +2,12 @@
 //==============================================
 
 const express = require("express");
+const fs = require("fs");
 const path = require("path");
+const { v4: uuidv4 } = require("uuid");
+uuidv4();
 
-//going to need to require fs module to import it.
+console.log("uuid: " + uuidv4());
 
 // Sets up the Express App
 // ==============================================
@@ -32,11 +35,28 @@ let testing = [
 //Routes
 //==============================================
 
-// app.get("/api/notes", function (req, res) {
-//   //use the fs module to read the db.json file
-//   //THEN parse the file contents with JSON.parse to get the real data
-//   //send the parsed data back to the client with res.JSON()
-// });
+app.get("/api/notes", function (req, res) {
+  fs.readFile("./db/db.json", "utf8", (err, data) => {
+    if (err) throw err;
+    // console.log(data);
+    let database = JSON.parse(data);
+    console.log(database);
+    // res.json(database);
+  });
+  // fs.readFile("./db.json", 'utf8' (err, data) => {
+  //   if (err) {
+  //     console.log("error, you cannot read my file");
+  //   } else {
+  //     const database = JSON.parse(data);
+  //     database.forEach(db => {
+  //       console.log(`${db.name}: ${db.type}`)
+  //     })
+  //   }
+  // });
+  //use the fs module to read the db.json file
+  //THEN parse the file contents with JSON.parse to get the real data
+  //send the parsed data back to the client with res.JSON()
+});
 
 // app.post("/api/notes", function (req, res) {
 //   //Access the POSTed data in req.body
