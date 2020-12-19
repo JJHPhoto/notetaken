@@ -21,21 +21,21 @@ app.use(express.static("public"));
 
 //Test Objects
 //==============================================
-let testing = [
-  {
-    routeName: "yoda",
-    name: "Yoda",
-    role: "Jedi Master",
-    age: 900,
-    forcePoints: 2000,
-  },
-];
+// let testing = [
+//   {
+//     routeName: "yoda",
+//     name: "Yoda",
+//     role: "Jedi Master",
+//     age: 900,
+//     forcePoints: 2000,
+//   },
+// ];
 
 //Routes
 //==============================================
 
 require("./routes/apiRoutes")(app);
-// require("./routes/htmlRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 // app.get("/api/notes", function (req, res) {
 //   fs.readFile("./db/db.json", "utf8", (err, data) => {
