@@ -1,7 +1,8 @@
 //Dependencies
 //==============================================
 const fs = require("fs");
-let database = require("../db/db.json");
+const database = require("../db/db.json");
+// let path = require("path");
 
 // ROUTING
 //==============================================
@@ -11,29 +12,30 @@ module.exports = function (app) {
     fs.readFile("./db/db.json", "utf8", (err, data) => {
       if (err) throw err;
       // console.log(data);
-      let database = JSON.parse(data);
+      let parseDB = JSON.parse(data);
       // console.log(database);
-      return res.json(database);
+      res.json(parseDB);
     });
   });
 
-  app.post("api/notes", function (req, res) {
-    const addNote = req.bod;
+  app.post("/api/notes", function (req, res) {
+    let addNote = req.body;
     console.log(addNote);
 
     fs.readFile("./db/db.json", "utf8", (err, data) => {
       if (err) throw err;
-      let database = JSON.parse(data);
-      console.log(database);
-      database.push(req.body);
+      let parseDB = JSON.parse(data);
+      parseDB.push(req.body);
+      console.log(parseDB);
 
-      let addToDataBase = JSON.stringify(database);
+      let addToDataBase = JSON.stringify(parseDB);
       console.log(addToDataBase);
 
       fs.writeFile("./db/db.json", addToDataBase, (err) => {
         if (err) throw err;
         else {
           console.log("New note created");
+          res.json(addToDataBase);
         }
       });
     });
