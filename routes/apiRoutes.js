@@ -2,6 +2,9 @@
 //==============================================
 const fs = require("fs");
 const database = require("../db/db.json");
+const { v4: uuidv4 } = require("uuid");
+uuidv4();
+console.log("uuid: " + uuidv4());
 // let path = require("path");
 
 // ROUTING
@@ -22,6 +25,9 @@ module.exports = function (app) {
     let addNote = req.body;
     console.log(addNote);
 
+    let uniqueID = uuidv4();
+    addNote["id"] = uniqueID;
+    console.log(addNote);
     fs.readFile("./db/db.json", "utf8", (err, data) => {
       if (err) throw err;
       let parseDB = JSON.parse(data);
