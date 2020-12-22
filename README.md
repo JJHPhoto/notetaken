@@ -35,6 +35,8 @@ Before I got too far along the project, I wanted to try and make my server code 
 
 My html routes were fairly simple to set up, but my apiRoutes turned out to be quite difficult to set up. I kept thinking since I had already written code in my "get" requests, I didn't need to do the same in my "post" or "delete" requests. I then went the other direction and did a lot of the same in each request, trying to find the combination that worked. Once again, my study group came to the rescue! Working over the code with a few of them on a couple different nights found a few glitches that I didn't forsee. I also only got Heroku working when a study group member noticed the wrong file being named in my Procfile.
 
+Speaking of Heroku. It was a bit frustrating that the README file we were given had very dated information or no information on certain things at all. I really wish part of the set up for the Heroku app included a guide to linking to Github. I couldn't figure out why my application wasn't working on Heroku because I couldn't tell if it was the code we were given or if I had deployed it wrong. There was also no talk about needing a Procfile. Somewhat frustrating that there weren't more details about this brand new system we were using.
+
 ### Technology used
 
 <p>
