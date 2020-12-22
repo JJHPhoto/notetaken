@@ -63,7 +63,7 @@ module.exports = function (app) {
 
       console.log(newDB);
 
-      newDB.push(req.body);
+      // newDB.push(req.body);
 
       let addToDataBase = JSON.stringify(newDB);
 

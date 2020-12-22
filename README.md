@@ -35,5 +35,6 @@ Before I got too far along the project, I wanted to try and make my server code 
     <img src="https://img.shields.io/badge/-inquirer-red" >
     <img src="https://img.shields.io/badge/-heroku-blueviolet" />
     <img src="https://img.shields.io/badge/-html-orange" />
+    <img src="https://img.shields.io/badge/jQuery-blue"  />
 
 </p>
