@@ -1,4 +1,4 @@
-# notetaken
+# [Note Taken](https://note-taking-jjh.herokuapp.com/)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -17,15 +17,23 @@
     </a>
 </p>
 
-## How to use app
+## How to use the application
+
+To use my application, you can click on my title or use the [link here](https://note-taking-jjh.herokuapp.com/). My application is a simple note taking app that lets you make new notes and delete notes if you would like to. Sometimes its nice to have just one place to take notes that you can easily reference. Since this is an app in your browser, you can easily do this on your computer or mobile device. If you need a walk through of how to use the app, there is a gif below as well as a link to a demo of me using the app.
 
 ## Screenshots/gif/video
+
+![](noteDemo.gif)
+
+To watch a video demonstrating how to make and delete notes with my application, please use [this link](https://drive.google.com/file/d/1dmCtJWON9akgIQLQgD28C-zUej5Bqvl9/view).
 
 ### Workflow
 
 To start with this homework assignment, I looked at an activity we had done in this unit that had very similar properties. I set up my server and port listener then tested that it was working. It worked fine. I then worked on getting my GET & POST paths working. I was a bit confused by this at first. However, working with my study group and my tutor gave me enough understanding to start connecting dots.
 
-Before I got too far along the project, I wanted to try and make my server code more modular. So, I began by making files for each of my routes.
+Before I got too far along the project, I wanted to try and make my server code more modular. So, I began by making files for each of my routes. I then moved my routes from my server.js file to my routes files. I had got everything working on my server file before I created the routes. I then slowly moved bits over to my two route files. I wanted to make sure the new routes were working before I commited and pushed.
+
+My html routes were fairly simple to set up, but my apiRoutes turned out to be quite difficult to set up. I kept thinking since I had already written code in my "get" requests, I didn't need to do the same in my "post" or "delete" requests. I then went the other direction and did a lot of the same in each request, trying to find the combination that worked. Once again, my study group came to the rescue! Working over the code with a few of them on a couple different nights found a few glitches that I didn't forsee. I also only got Heroku working when a study group member noticed the wrong file being named in my Procfile.
 
 ### Technology used
 
@@ -38,3 +46,8 @@ Before I got too far along the project, I wanted to try and make my server code 
     <img src="https://img.shields.io/badge/jQuery-blue"  />
 
 </p>
+
+### Contributors
+
+- [Thomas](https://github.com/Tskading)
+- [Zac](https://github.com/themancalledzac)
