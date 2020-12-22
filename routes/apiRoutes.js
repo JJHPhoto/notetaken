@@ -63,8 +63,6 @@ module.exports = function (app) {
 
       console.log(newDB);
 
-      // newDB.push(req.body);
-
       let addToDataBase = JSON.stringify(newDB);
 
       fs.writeFile("./db/db.json", addToDataBase, (err) => {
