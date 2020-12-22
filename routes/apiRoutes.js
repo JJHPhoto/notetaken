@@ -71,7 +71,7 @@ module.exports = function (app) {
         if (err) throw err;
         else {
           console.log("Note deleted!");
-          res.json(newDB);
+          return res.json(true);
           res.status(200);
         }
       });
